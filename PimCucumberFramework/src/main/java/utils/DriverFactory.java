@@ -21,6 +21,7 @@ public class DriverFactory {
 		try {
 			// test
 			// Read Config
+//<<<<<<< HEAD
 			// ReadConfigFile file = new ReadConfigFile();
 			// String browserName = file.getBrowser();
 
@@ -51,6 +52,15 @@ public class DriverFactory {
 
 			case "":
 
+				// code
+				if (null == driver) {
+					System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
+					// CHROME OPTIONS
+					driver = new ChromeDriver();
+					driver.manage().window().maximize();
+				}
+				break;
+			case "":
 				// code
 				if (null == driver) {
 					System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
