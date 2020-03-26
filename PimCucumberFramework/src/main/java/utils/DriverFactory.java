@@ -20,9 +20,9 @@ public class DriverFactory {
 	public WebDriver getDriver() {
 		try {
 			// Read Config
-			ReadConfigFile file = new ReadConfigFile();
-			String browserName = file.getBrowser();
-
+			//ReadConfigFile file = new ReadConfigFile();
+			//String browserName = file.getBrowser();
+			String browserName = "chrome";
 			switch (browserName) {
 
 			case "firefox":
