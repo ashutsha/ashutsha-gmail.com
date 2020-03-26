@@ -19,6 +19,7 @@ public class DriverFactory {
 
 	public WebDriver getDriver() {
 		try {
+			// test
 			// Read Config
 			// ReadConfigFile file = new ReadConfigFile();
 			// String browserName = file.getBrowser();
