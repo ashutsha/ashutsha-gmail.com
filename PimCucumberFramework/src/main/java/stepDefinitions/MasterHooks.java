@@ -14,6 +14,7 @@ public class MasterHooks extends DriverFactory {
 	@Before
 	public void setup() {
 		driver = getDriver();
+
 	}
 
 	@After
