@@ -44,6 +44,15 @@ public class DriverFactory {
 					driver.manage().window().maximize();
 				}
 				break;
+			case "":
+				// code
+				if (null == driver) {
+					System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
+					// CHROME OPTIONS
+					driver = new ChromeDriver();
+					driver.manage().window().maximize();
+				}
+				break;
 
 			case "ie":
 				// code
