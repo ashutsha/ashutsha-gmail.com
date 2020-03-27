@@ -8,11 +8,13 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import pageObjects.BasePage;
 import utils.DriverFactory;
+import utils.ReadConfigFile;
 
 public class MasterHooks extends DriverFactory {
 
 	@Before
 	public void setup() {
+		ReadConfigFile.ConfigFileReader();
 		driver = getDriver();
 
 	}

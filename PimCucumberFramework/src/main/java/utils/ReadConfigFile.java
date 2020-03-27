@@ -1,26 +1,40 @@
 package utils;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.Properties;
 
 public class ReadConfigFile {
-	protected InputStream input = null;
-	protected Properties prop = null;
+	// make property as static
+	public static Properties pro;
+	// public static Properties pro;
 
-	public ReadConfigFile() {
+	// make method as static
+	public static void ConfigFileReader() {
 		try {
-			input = ReadConfigFile.class.getClassLoader().getResourceAsStream(Constant.CONFIG_PROPERTIES_DIRECTORY);
-			prop = new Properties();
-			prop.load(input);
-		} catch (IOException e) {
-			e.printStackTrace();
+			File src = new File("./src/main/java/properties/config.properties");
+			FileInputStream fis = new FileInputStream(src);
+			pro = new Properties();
+			pro.load(fis);
+			System.out.println("Property class loaded");
+		} catch (Exception e) {
+			System.out.println("Exception is" + e.getMessage());
 		}
 	}
 
+	/*
+	 * protected InputStream input = null; protected Properties prop = null;
+	 *
+	 * public ReadConfigFile() { try { input =
+	 * ReadConfigFile.class.getClassLoader().getResourceAsStream(Constant.
+	 * CONFIG_PROPERTIES_DIRECTORY); prop = new Properties(); prop.load(input); }
+	 * catch (IOException e) { e.printStackTrace(); }
+	 */
+
 	public String getBrowser() {
-		if (prop.getProperty("browser") == null)
+		if (pro.getProperty("browser") == null) {
 			return "";
-		return prop.getProperty("browser");
+		}
+		return pro.getProperty("browser");
 	}
 }
