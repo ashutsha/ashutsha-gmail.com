@@ -23,8 +23,6 @@ public class DriverFactory {
 			ReadConfigFile file = new ReadConfigFile();
 			String browserName = file.getBrowser();
 
-			// String browserName = "chrome";
-
 			switch (browserName) {
 
 			case "firefox":
@@ -58,6 +56,7 @@ public class DriverFactory {
 					driver.manage().window().maximize();
 				}
 				break;
+
 			}
 		} catch (Exception e) {
 			System.out.println("Unable to load browser: " + e.getMessage());
