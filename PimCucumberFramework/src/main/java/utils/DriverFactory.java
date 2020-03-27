@@ -19,13 +19,11 @@ public class DriverFactory {
 
 	public WebDriver getDriver() {
 		try {
-			// test
-			// Read Config
-//<<<<<<< HEAD
-			// ReadConfigFile file = new ReadConfigFile();
-			// String browserName = file.getBrowser();
 
-			String browserName = "chrome";
+			ReadConfigFile file = new ReadConfigFile();
+			String browserName = file.getBrowser();
+
+			// String browserName = "chrome";
 
 			switch (browserName) {
 
@@ -41,26 +39,6 @@ public class DriverFactory {
 
 			case "chrome":
 
-				// code
-				if (null == driver) {
-					System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
-					// CHROME OPTIONS
-					driver = new ChromeDriver();
-					driver.manage().window().maximize();
-				}
-				break;
-
-			case "":
-
-				// code
-				if (null == driver) {
-					System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
-					// CHROME OPTIONS
-					driver = new ChromeDriver();
-					driver.manage().window().maximize();
-				}
-				break;
-			case "":
 				// code
 				if (null == driver) {
 					System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);

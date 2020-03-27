@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT"
-	name="Failed suite [Default suite]">
-	<test verbose="2" name="Default test">
-		<classes>
-			<class name="utils.DriverFactory" />
-			<class name="utils.Constant" />
-			<class name="stepDefinitions.ProductSteps" />
-			<class name="pageObjects.ContactUs_Page" />
-			<class name="stepDefinitions.ContactUsSteps" />
-			<class name="utils.ReadConfigFile" />
-			<class name="stepDefinitions.MasterHooks" />
-			<class name="pageObjects.Products_Page" />
-			<class name="pageObjects.BasePage" />
-		</classes>
-	</test> <!-- Default test -->
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="runners.MainRunner"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="runners.MainRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0 1"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- runners.MainRunner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

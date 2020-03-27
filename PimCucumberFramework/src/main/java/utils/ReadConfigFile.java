@@ -5,8 +5,8 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class ReadConfigFile {
-	protected InputStream input = null;
-	protected Properties prop = null;
+	protected InputStream input;
+	protected Properties prop;
 
 	public ReadConfigFile() {
 		try {
@@ -19,8 +19,9 @@ public class ReadConfigFile {
 	}
 
 	public String getBrowser() {
-		if (prop.getProperty("browser") == null)
+		if (prop.getProperty("browser") == null) {
 			return "";
+		}
 		return prop.getProperty("browser");
 	}
 }
